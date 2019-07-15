@@ -1,0 +1,11 @@
+# IDE
+.idea/
+*.iml
+
+# Jar files
+spigot_versions/*.jar
+
+# Compiler
+target/
+extracted_files/*
+!extracted_files/README.md
