@@ -1,6 +1,8 @@
 # Spigot Server .jar Files
 
-Download links:
+To get all the jars automatically downloaded run the [download.sh](../download.sh) script.
+
+You can also download it manually using the download links:
 * 1.8:
   * [R1](https://cdn.getbukkit.org/spigot/spigot-1.8-R0.1-SNAPSHOT-latest.jar) (1.8)
   * [R2](https://cdn.getbukkit.org/spigot/spigot-1.8.3-R0.1-SNAPSHOT-latest.jar) (1.8.3)
