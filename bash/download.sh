@@ -25,8 +25,8 @@ versions=(
 "spigot-1.14.2"
 )
 
-mkdir spigot_versions/ -p
-cd spigot_versions/
+mkdir ../spigot_versions/ -p
+cd ../spigot_versions/
 
 for version in "${versions[@]}"
 do
@@ -51,7 +51,7 @@ do
     echo ""
 done
 
-cd ..
+cd ./bash
 if "$success" = true; then
     echo \e[32mSuccessfully downloaded all available versions!\e[39m
 fi

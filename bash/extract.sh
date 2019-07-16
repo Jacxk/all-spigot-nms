@@ -2,7 +2,7 @@
 
 # Run this to ONLY extract the jars.
 
-holder="extracted_files"
+holder="../extracted_files"
 mkdir "$holder" -p
 
 echo "Extracting all spigot.jar files, please wait..."

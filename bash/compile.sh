@@ -7,6 +7,6 @@ holder="extracted_files"
 bash extract.sh
 
 echo "Creating spigot-all-nms.jar"
-jar -cvf spigot-all-nms.jar -C "$holder" .
+jar -cvf ../all-spigot-nms.jar -C "$holder" .
 
 echo "Finished!"
