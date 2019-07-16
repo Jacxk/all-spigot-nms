@@ -1,8 +1,8 @@
 # all-spigot-nms
-All nms versions of bukkit in one jar file
+All NMS versions of spigot in one jar file
 
 # Usage
-Add the following code to your `pom.xml` for the latest release:
+Add this the `pom.xml` of your minecraft plugin (or any other project) to use it as dependency.
 ```xml
 <repositories>
     <!-- All NMS versions of bukkit/minecraft -->
@@ -21,3 +21,6 @@ Add the following code to your `pom.xml` for the latest release:
     </dependency>
 </dependencies>
 ```
+
+You can also compile it your self if you don't want to use maven you can clone this repository
+and run the [download.sh](./bash/download.sh) and [compile.sh](./bash/compile.sh) commands to get the jar with all the contents.
