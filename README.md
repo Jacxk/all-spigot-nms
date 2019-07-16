@@ -1,26 +1,15 @@
 # all-spigot-nms
-All NMS versions of spigot in one jar file
+All NMS versions of spigot in one jar file.
 
 # Usage
-Add this the `pom.xml` of your minecraft plugin (or any other project) to use it as dependency.
-```xml
-<repositories>
-    <!-- All NMS versions of bukkit/minecraft -->
-    <repository>
-        <id>all-spigot-nms-repo</id>
-        <url>http://maven.jackscode.me/repository/all-spigot-nms/</url>
-    </repository>
-</repositories>
 
-<dependencies>
-    <dependency>
-        <groupId>me.jackscode</groupId>
-        <artifactId>all-spigot-nms</artifactId>
-        <version>1.0</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-```
+To use this tool you have follow the steps bellow:
+* Clone this repository: `git clone https://github.com/Jacxk/all-spigot-nms`
+* Open a terminal inside the repository folder and:
+  * Enter bash folder: `cd bash/`
+  * Download all the needed files: `bash download.sh`
+  * Compile all the needed files: `bash compile.sh`
+* Import the compiled jar file to your IDE
+* Start coding...
 
-You can also compile it your self if you don't want to use maven you can clone this repository
-and run the [download.sh](./bash/download.sh) and [compile.sh](./bash/compile.sh) commands to get the jar with all the contents.
+*I'm not distributing anything, please don't sue me Mojang.*
