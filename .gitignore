@@ -3,7 +3,7 @@
 *.iml
 
 # Jar files
-spigot_versions/*.jar
+*.jar
 
 # Compiler
 target/
