@@ -8,10 +8,6 @@
     <artifactId>all-spigot-nms</artifactId>
     <version>LATEST</version>
 
-    <properties>
-        <github.global.server>github</github.global.server>
-    </properties>
-
     <distributionManagement>
         <repository>
             <id>ID HERE</id>

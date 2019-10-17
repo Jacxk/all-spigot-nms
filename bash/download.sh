@@ -22,7 +22,7 @@ versions=(
 "spigot-1.12.2"
 "spigot-1.13"
 "spigot-1.13.2"
-"spigot-1.14.2"
+"spigot-1.14.4"
 )
 
 cd ..
@@ -56,3 +56,4 @@ cd ../bash
 if "$success" = true; then
     echo -e \e[32mSuccessfully downloaded all available versions!\e[39m
 fi
+read -p "Press [ENTER] key to continue..."
