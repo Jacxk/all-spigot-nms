@@ -25,7 +25,7 @@ To use this tool you have to follow the steps bellow:
 *I have no idea lol*
 
 #
-All the NMS version. [click here](/extracted_files)\
+All the NMS version. [click here](/spigot_versions)\
 Description on compiling the Jar file. [click here](/bash)
 
 *I'm not distributing anything, please don't sue me Mojang.*
