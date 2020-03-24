@@ -1,6 +1,6 @@
 # Spigot Server .jar Files
 
-To get all the jars automatically downloaded run the [download.sh](../bash/download.sh) script.
+To get all the jars automatically downloaded run the [download.sh](../bash/source/download.sh) script.
 
 You can also download it manually using the download links:
 * 1.8:
@@ -21,3 +21,5 @@ You can also download it manually using the download links:
   * [R2](https://cdn.getbukkit.org/spigot/spigot-1.13.2.jar) (1.13.2)
 * 1.14:
   * [R1](https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar) (1.14.4)
+* 1.15:
+  * [R1](https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar) (1.15.2)

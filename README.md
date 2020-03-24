@@ -1,15 +1,31 @@
-# all-spigot-nms
-All NMS versions of spigot in one jar file.
+# All Spigot NMS
+All NMS versions of spigot in one jar file. How awesome is that?
 
 # Usage
-
-To use this tool you have follow the steps bellow:
+To use this tool you have to follow the steps bellow:
 * Clone this repository: `git clone https://github.com/Jacxk/all-spigot-nms`
-* Open a terminal inside the repository folder and:
+* Open a terminal inside the repository folder:
   * Enter bash folder: `cd bash/`
-  * Download all the needed files: `bash download.sh`
-  * Compile all the needed files: `bash compile.sh`
-* Import the compiled jar file to your IDE
+  * Run the tool: `bash ./run.sh`
+* Import the compiled jar file into your IDE
 * Start coding...
+
+# Importing
+### Maven:
+```xml
+<dependency>
+    <groupId>local.spigot.nms</groupId>
+    <artifactId>AllSpigotNMS</artifactId>
+    <version>LATEST</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/PATH TO FILE HERE</systemPath>
+</dependency>
+```
+### Graddle:
+*I have no idea lol*
+
+#
+All the NMS version. [click here](/extracted_files)\
+Description on compiling the Jar file. [click here](/bash)
 
 *I'm not distributing anything, please don't sue me Mojang.*
