@@ -1,6 +1,6 @@
 # Spigot Server .jar Files
 
-To get all the jars automatically downloaded run the [download.sh](../bash/source/download.sh) script.
+To get all the jars automatically downloaded run the [download.sh](../src/commands/download.sh) script.
 
 You can also download it manually using the download links:
 * 1.8:
