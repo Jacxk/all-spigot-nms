@@ -4,8 +4,9 @@
 
 holder="extracted_files"
 JDK_DIR="$(printenv JAVA_HOME)\\bin\\"
-
-cd ../../
+pwd
+cd ../
+pwd
 echo "Creating spigot-all-nms.jar"
 "${JDK_DIR}jar.exe" -cf all-spigot-nms.jar -C "$holder" .
 

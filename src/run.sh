@@ -18,15 +18,15 @@ make_menu() {
 
   echo "Running ${options[$choice]}..."
   if [ $choice = 0 ]; then
-    bash source/download.sh
+    bash commands/download.sh
   elif [ $choice = 1 ]; then
-    bash source/extract.sh
+    bash commands/extract.sh
   elif [ $choice = 2 ]; then
-    bash source/compile.sh
+    bash commands/compile.sh
   elif [ $choice = 3 ]; then
-    bash source/download.sh
-    bash source/extract.sh
-    bash source/compile.sh
+    bash commands/download.sh
+    bash commands/extract.sh
+    bash commands/compile.sh
   elif [ $choice = 4 ]; then
     echo "Bye Bye..."
     exit
