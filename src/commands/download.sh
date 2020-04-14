@@ -53,7 +53,7 @@ for version in "${versions[@]}"; do
   echo ""
 done
 
-cd ../bash || exit
+cd ../src/commands/ || exit
 if "$success" = true; then
   echo -e "\e[32mSuccessfully downloaded all available versions!\e[39m"
 fi

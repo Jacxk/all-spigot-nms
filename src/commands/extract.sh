@@ -18,6 +18,6 @@ for filename in ../spigot_versions/spigot-1.*.jar; do
   "${JDK_DIR}jar.exe" -xf "$filename" com/mojang
 done
 
-cd ../bash/ || exit
+cd ../src/commands || exit
 
 echo "Extraction completed!"
