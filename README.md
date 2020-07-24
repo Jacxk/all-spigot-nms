@@ -5,8 +5,9 @@ All NMS versions of spigot in one jar file. How awesome is that?
 To use this tool you have to follow the steps bellow:
 * Clone this repository: `git clone https://github.com/Jacxk/all-spigot-nms`
 * Open a terminal inside the repository folder:
-  * Enter bash folder: `cd src/commands/`
+  * Enter bash folder: `cd src/`
   * Run the tool: `bash ./run.sh`
+  * Choose `All of the above` to get the jar file
 * Import the compiled jar file into your IDE
 * Start coding...
 

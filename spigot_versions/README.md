@@ -23,3 +23,5 @@ You can also download it manually using the download links:
   * [R1](https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar) (1.14.4)
 * 1.15:
   * [R1](https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar) (1.15.2)
+* 1.16:
+  * [R1](https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar) (1.16.1)
