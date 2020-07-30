@@ -29,4 +29,6 @@ To use this tool you have to follow the steps bellow:
 All the NMS version. [click here](/spigot_versions)\
 Description on compiling the Jar file. [click here](/src)
 
+*NOTE: This only works for Windows out of the box, you can edit it to make work for linux*
+
 *I'm not distributing anything, please don't sue me Mojang.*
