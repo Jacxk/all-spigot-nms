@@ -4,6 +4,7 @@
 . ./util/title.sh
 . ./util/menu.sh
 . ./util/args.sh
+. ./util/exist.sh
 
 # Enter the commands folder
 cd ./commands/ || exit 1
@@ -58,7 +59,7 @@ make_menu() {
     fi
 
     if [ "$flag" = true ]; then
-      exit 0
+      check
     fi
 
   elif [ $choice = 4 ]; then

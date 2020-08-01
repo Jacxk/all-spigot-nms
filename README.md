@@ -1,6 +1,8 @@
 # All Spigot NMS
 All NMS versions of spigot in one jar file. How awesome is that?
 
+![Build Test](https://github.com/Jacxk/all-spigot-nms/workflows/Build%20Test/badge.svg)
+
 # Usage
 To use this tool you have to follow the steps bellow:
 * Clone this repository: `git clone https://github.com/Jacxk/all-spigot-nms`
