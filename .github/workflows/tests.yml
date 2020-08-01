@@ -1,0 +1,36 @@
+name: Build Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  linux:
+    name: Linux Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Jar File
+      run: bash src/run.sh -a
+  windows:
+    name: Windows Test
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Jar File
+      run: bash src/run.sh -a
+  mac:
+    name: Mac Test
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Jar File
+      run: bash src/run.sh -a
