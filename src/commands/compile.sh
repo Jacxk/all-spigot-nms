@@ -3,11 +3,14 @@
 # Run this to extract and compile the jars.
 
 holder="extracted_files"
-JDK_DIR="$(printenv JAVA_HOME)\\bin\\"
+cmd="$(printenv ASNMSCMD)"
+if [ -z "$cmd" ]; then
+  cmd=jar
+fi
 
 cd ../../
 
 echo "Creating spigot-all-nms.jar"
-"${JDK_DIR}jar.exe" -cf all-spigot-nms.jar -C "$holder" .
+"$cmd" -cf all-spigot-nms.jar -C "$holder" .
 
 echo "Finished!"

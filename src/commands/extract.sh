@@ -3,7 +3,10 @@
 # Run this to ONLY extract the jars.
 
 holder="extracted_files"
-JDK_DIR="$(printenv JAVA_HOME)\\bin\\"
+cmd="$(printenv ASNMSCMD)"
+if [ -z "$cmd" ]; then
+  cmd=jar
+fi
 
 cd ../../
 mkdir "$holder" -p
@@ -13,9 +16,9 @@ echo "Extracting all spigot.jar files, please wait..."
 
 for filename in ../spigot_versions/spigot-1.*.jar; do
   echo "Currently extracting $filename..."
-  "${JDK_DIR}jar.exe" -xf "$filename" net/minecraft/server
-  "${JDK_DIR}jar.exe" -xf "$filename" org/bukkit/craftbukkit
-  "${JDK_DIR}jar.exe" -xf "$filename" com/mojang
+  "$cmd" -xf "$filename" net/minecraft/server
+  "$cmd" -xf "$filename" org/bukkit/craftbukkit
+  "$cmd" -xf "$filename" com/mojang
 done
 
 cd ../src/commands || exit

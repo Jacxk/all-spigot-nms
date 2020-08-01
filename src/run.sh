@@ -6,13 +6,16 @@
 cd ./commands/ || exit 1
 
 make_menu() {
+  check_os
+
+  echo "Detected OS: $(uname). Using $(printenv ASNMSCMD)"
   echo "What do would you like to do today? (Use arrow keys to move, and Enter to select)"
   echo
   options=(
     "Download"
     "Extract"
     "Compile"
-    "All of the above"
+    "All the above"
     "Exit"
   )
   select_option "${options[@]}"
@@ -31,10 +34,26 @@ make_menu() {
     bash ./compile.sh
   elif [ $choice = 4 ]; then
     echo "Bye Bye..."
+    unset ASNMSCMD
     exit
   fi
 
   make_menu
+}
+
+check_os() {
+  OS=$(uname)
+
+  if [[ $OS == Linux* ]] || [[ $OS == Darwin* ]]; then
+    export ASNMSCMD=jar
+  else
+    java_home="$(printenv JAVA_HOME)"
+    if [ -z "$java_home" ]; then
+      export ASNMSCMD=jar
+    else
+      export ASNMSCMD="$java_home\bin\jar.exe"
+    fi
+  fi
 }
 
 make_menu
