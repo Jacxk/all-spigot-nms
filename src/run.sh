@@ -15,6 +15,7 @@ make_menu() {
   echo "What do would you like to do today? (Use arrow keys to move, and Enter to select)"
   echo
 
+  flag=false
   # If no flag added to the command, create an interactive menu
   if [[ "$choice" == 89 ]]; then
     options=(
@@ -26,6 +27,8 @@ make_menu() {
     )
     select_option "${options[@]}"
     choice=$?
+  else
+    flag=true
   fi
 
   echo "Running ${options[$choice]}..."
@@ -53,6 +56,11 @@ make_menu() {
     else
       exit 1
     fi
+
+    if [ "$flag" = true ]; then
+      exit 0
+    fi
+
   elif [ $choice = 4 ]; then
     echo "Bye Bye..."
     unset ASNMSCMD

@@ -24,4 +24,4 @@ echo "Creating spigot-all-nms.jar"
 echo "Finished!"
 
 # Go back to the commands folder
-cd ../src/commands || exit 1
+cd src/commands || exit 1
