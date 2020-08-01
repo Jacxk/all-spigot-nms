@@ -22,8 +22,12 @@ To use this tool you have to follow the steps bellow:
     <systemPath>${project.basedir}/PATH TO FILE HERE</systemPath>
 </dependency>
 ```
-### Graddle:
-*I have no idea lol*
+### Gradle:
+```groovy
+dependencies {
+    implementation(files("/path/to/file.jar"))
+}
+```
 
 #
 All the NMS version. [click here](/spigot_versions)\
