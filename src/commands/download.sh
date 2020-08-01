@@ -2,16 +2,7 @@
 
 # Run this to download all the available jars.
 
-debug=false
-success=true
-
-while getopts ":d" option; do
-  case "${option}" in
-  d) debug=true ;;
-  *) debug=false ;;
-  esac
-done
-
+# All the NMS versions available
 versions=(
   "spigot-1.8-R0.1-SNAPSHOT-latest"
   "spigot-1.8.3-R0.1-SNAPSHOT-latest"
@@ -28,33 +19,26 @@ versions=(
   "spigot-1.16.1"
 )
 
+# Go back and create dir spigot_versions if not exists
 cd ../../
 mkdir spigot_versions/ -p
-cd spigot_versions/ || exit
+cd spigot_versions/ || exit 1
 
+# Download all versions from getbukkit.org on dir spigot_versions
 for version in "${versions[@]}"; do
   echo -e "Downloading \e[34m$version\e[39m...\e[39m"
-  if "$debug" = true; then
-    if curl --fail https://cdn.getbukkit.org/spigot/"$version".jar --output "$version".jar; then
-      echo -e "Downloaded \e[34m$version \e[39msuccessfully!"
-      success=true
-    else
-      echo -e "\e[91mSome went wrong!\e[39m"
-      success=false
-    fi
+  if curl --fail https://cdn.getbukkit.org/spigot/"$version".jar --output "$version".jar; then
+    echo -e "Downloaded \e[34m$version \e[39msuccessfully!"
   else
-    if curl --fail -s https://cdn.getbukkit.org/spigot/"$version".jar --output "$version".jar; then
-      echo -e "Downloaded \e[34m$version \e[39msuccessfully!"
-      success=true
-    else
-      echo -e "\e[91mSome went wrong! Use run this script using -d to display the output\e[39m"
-      success=false
-    fi
+    # If the download fails stop the execution
+    echo ""
+    echo -e "\e[91mSomething went wrong!\e[39m"
+    exit 1
   fi
   echo ""
 done
 
-cd ../src/commands/ || exit
-if "$success" = true; then
-  echo -e "\e[32mSuccessfully downloaded all available versions!\e[39m"
-fi
+echo -e "\e[32mSuccessfully downloaded all available versions!\e[39m"
+
+# Go back to the commands folder
+cd ../src/commands/ || exit 1
