@@ -17,6 +17,9 @@ versions=(
   "spigot-1.14.4"
   "spigot-1.15.2"
   "spigot-1.16.1"
+  "spigot-1.16.3"
+  "spigot-1.16.5"
+  "spigot-1.17.1"
 )
 
 # Go back and create dir spigot_versions if not exists
