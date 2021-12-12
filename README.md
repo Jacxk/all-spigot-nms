@@ -30,7 +30,7 @@ dependencies {
     implementation(files("/path/to/file.jar"))
 }
 ```
-
+You can now install it using the [github package](https://github.com/Jacxk?tab=packages&repo_name=all-spigot-nms)
 #
 All the NMS version. [click here](/spigot_versions)\
 Description on compiling the Jar file. [click here](/src)
