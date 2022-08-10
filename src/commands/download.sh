@@ -24,6 +24,10 @@ legacy_versions=(
 versions=(
   "spigot-1.17.1"
   "spigot-1.18.1"
+  "spigot-1.18.2"
+  "spigot-1.19"
+  "spigot-1.19.1"
+  "spigot-1.19.2"
 )
 
 # Go back and create dir spigot_versions if not exists
