@@ -20,6 +20,13 @@ To compile the Jar file you must run [run.sh](run.sh) and select one of  options
 
 #
 
+#### Spigot NMS and Minecraft Versions:
+* 1.8 and 1.9 Look at [this page](https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions-legacy/)
+* 1.10 up Look at [this page](https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions-1-10-1-15/)
+* 1.16 and up Look at [this page](https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions-1-16/)
+
+#
+
 *If you use Linux or  Mac you can skip this.*
 
 NOTE: This tool uses the `jar` and uses the `JAVA_HOME` environmental variable.
