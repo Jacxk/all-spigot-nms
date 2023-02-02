@@ -19,7 +19,7 @@ mkdir "$holder" -p
 echo "Creating all-spigot-nms.jar"
 
 # Bundle all the files in a jar file
-"$cmd" -cf all-spigot-nms.jar -C "$holder" .
+"$cmd" -cf all-spigot-nms.jar -C ./"$holder" .
 
 echo "File created at: $holder/all-spigot-nms.jar"
 
