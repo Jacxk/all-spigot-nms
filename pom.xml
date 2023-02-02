@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.jackscode</groupId>
+    <groupId>com.github.Jacxk</groupId>
     <artifactId>all-spigot-nms</artifactId>
     <version>LATEST</version>
 
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Packages</name>
+            <name>GitHub Jacxk Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/Jacxk/all-spigot-nms</url>
         </repository>
     </distributionManagement>
