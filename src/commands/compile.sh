@@ -16,12 +16,12 @@ fi
 cd ../../ || exit 1
 mkdir "$holder" -p
 
-echo "Creating spigot-all-nms.jar"
+echo "Creating all-spigot-nms.jar"
 
 # Bundle all the files in a jar file
 "$cmd" -cf all-spigot-nms.jar -C "$holder" .
 
-echo "Finished!"
+echo "File created at: $holder/all-spigot-nms.jar"
 
 # Go back to the commands folder
 cd src/commands || exit 1
