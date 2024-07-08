@@ -17,7 +17,6 @@ jobs:
 
     - name: Build Jar File
       run: |
-        cd src
         bash run.sh -a
   windows:
     name: Windows Test
@@ -28,7 +27,6 @@ jobs:
 
     - name: Build Jar File
       run: |
-        cd src
         bash run.sh -a
   mac:
     name: Mac Test
@@ -39,5 +37,4 @@ jobs:
 
     - name: Build Jar File
       run: |
-        cd src
         bash run.sh -a
