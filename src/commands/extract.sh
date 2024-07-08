@@ -21,7 +21,7 @@ extract() {
   # Extract all files that match in holder
   for filename in ../$input_folder/spigot-1.*.jar; do
     saveCursorPosition
-    echo "  ⭕️ $(basename ${filename})"
+    echo_verbose "  ⭕️ $(basename ${filename})"
 
     # Loop through the needed folder and extract them.
     for dir in net/minecraft/server org/bukkit/craftbukkit com/mojang; do
@@ -33,7 +33,7 @@ extract() {
     done
 
     moveCursorToSavedPosition
-    echo "  🟢 $(basename ${filename})"
+    echo_verbose "  🟢 $(basename ${filename})"
   done
 
   delete_lines 24

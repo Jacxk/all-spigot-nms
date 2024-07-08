@@ -2,8 +2,9 @@
 
 choice=89
 is_interactive=0
+verbose=1
 
-while getopts ":adec" OPTION; do
+while getopts ":adecx" OPTION; do
   case $OPTION in
   d)
     choice=0;;
@@ -12,9 +13,11 @@ while getopts ":adec" OPTION; do
   c)
     choice=2;;
   a)
-    choice=3
-    ;;
+    choice=3;;
+  x)
+    verbose=0;;
   *)
     choice=89;;
   esac
+
 done

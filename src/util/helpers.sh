@@ -71,9 +71,17 @@ check_internet_connection() {
 }
 
 delete_lines() {
+  if [ $verbose -eq 1 ]; then
     local range="$1"
     for ((i = 1; i <= range; i++)); do
         moveCursorUp
         deleteLine
     done
+  fi
+}
+
+echo_verbose() {
+  if [ $verbose -eq 1 ]; then
+    echo $@
+  fi
 }

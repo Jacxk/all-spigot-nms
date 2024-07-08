@@ -4,7 +4,6 @@
 source src/util/args.sh
 source src/util/helpers.sh
 source src/util/menu.sh
-source src/util/exist.sh
 source src/util/print_utils.sh
 
 # Import commands
@@ -14,9 +13,6 @@ source src/commands/extract.sh
 
 # Run the command specified by the choice made on the menu
 run_command() {
-  mkdir -p spigot_versions
-  mkdir -p extracted_files
-
   case $1 in
   [0])
     download spigot_versions
@@ -103,5 +99,8 @@ execute() {
   fi
 
 }
+
+mkdir -p spigot_versions
+mkdir -p extracted_files
 
 execute

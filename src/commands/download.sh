@@ -42,13 +42,23 @@ function _download_jars {
   output=$3
 
   saveCursorPosition
-  echo "  ⭕️ $version"
+  echo_verbose "  ⭕️ $version"
+
+  curl_command() {
+    curl --fail "$url/$version".jar --output "$output/$version".jar --progress-bar
+  }
+
+  if [ $verbose -eq 0 ]; then
+    curl_command() {
+      curl -s "$url/$version".jar --output "$output/$version".jar > /dev/null
+    }
+  fi
 
   # Download the jar file to the output folder.
   #   Also saves the cursor and replaces the printed string for less clutter
-  if curl --fail "$url/$version".jar --output "$output/$version".jar --progress-bar; then
+  if curl_command; then
     moveCursorToSavedPosition
-    echo "  🟢 $version"
+    echo_verbose "  🟢 $version"
     deleteLine
   else
     # If the download fails stop the execution
@@ -83,5 +93,5 @@ function download {
   done
 
   delete_lines 24
-  echo Successfully downloaded all available versions! Files located at: $output_folder
+  echo ✅ Successfully downloaded all available versions! Files located at: $output_folder
 }
