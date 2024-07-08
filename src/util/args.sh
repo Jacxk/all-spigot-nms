@@ -1,28 +1,20 @@
 #!/usr/bin/env bash
 
 choice=89
+is_interactive=0
 
 while getopts ":adec" OPTION; do
   case $OPTION in
   d)
-    choice=0
-    break
-    ;;
+    choice=0;;
   e)
-    choice=1
-    break
-    ;;
+    choice=1;;
   c)
-    choice=2
-    break
-    ;;
+    choice=2;;
   a)
     choice=3
-    break
     ;;
   *)
-    choice=89
-    break
-    ;;
+    choice=89;;
   esac
 done
