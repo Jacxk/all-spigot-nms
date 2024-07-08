@@ -1,6 +1,7 @@
 # IDE
 .idea/
 *.iml
+.DS_STORE
 
 # Jar files
 *.jar

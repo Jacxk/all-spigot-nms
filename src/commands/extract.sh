@@ -11,9 +11,9 @@ if [ -z "$cmd" ]; then
 fi
 
 extract() {
-  current_dir=$(pwd)
-  input_folder=$1
-  output_folder=$2
+  local current_dir=$(pwd)
+  local input_folder=$1
+  local output_folder=$2
 
   cd $output_folder
   echo "Extracting all the spigot.jar files, please wait..."

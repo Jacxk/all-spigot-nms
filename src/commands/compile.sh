@@ -4,8 +4,6 @@
 
 # Command to be used depending on OS
 cmd="$(printenv ASNMSCMD)"
-output_folder=out
-output_file=all-spigot-nms.jar
 
 # If cmd is empty default to jar
 if [ -z "$cmd" ]; then
@@ -13,8 +11,10 @@ if [ -z "$cmd" ]; then
 fi
 
 compile() {
-  input_folder=$1
-  output="$output_folder/$output_file"
+  local output_folder=out
+  local output_file=all-spigot-nms.jar
+  local input_folder=$1
+  local output="$output_folder/$output_file"
   echo Creating $output_file
 
   # Remove file if it exists

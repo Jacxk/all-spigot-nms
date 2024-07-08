@@ -53,7 +53,7 @@ execute() {
     # Set mode as interactive
     is_interactive=1
     # Options to display on menu
-    options=(
+    local options=(
       "Download"
       "Extract"
       "Compile"

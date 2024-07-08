@@ -37,9 +37,9 @@ legacy_url="https://cdn.getbukkit.org/spigot"
 new_url="https://download.getbukkit.org/spigot"
 
 function _download_jars {
-  version=$1
-  url=$2
-  output=$3
+  local version=$1
+  local url=$2
+  local output=$3
 
   saveCursorPosition
   echo_verbose "  ⭕️ $version"
@@ -69,7 +69,7 @@ function _download_jars {
 function download {
   check_internet_connection
 
-  output_folder=$1
+  local output_folder=$1
   echo Downloading all available jar files
 
   # Download all legacy versions from cdn.getbukkit.org on dir spigot_versions
