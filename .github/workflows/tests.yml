@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build Jar File
+    - name: Build Jar File and test for Linux
       run: |
-        bash run.sh -a
+        bash src/test.sh
   windows:
     name: Windows Test
     runs-on: windows-latest
@@ -25,9 +25,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build Jar File
+    - name: Build Jar File and test for Windows
       run: |
-        bash run.sh -a
+        bash src/test.sh
   mac:
     name: Mac Test
     runs-on: macos-latest
@@ -35,6 +35,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build Jar File
+    - name: Build Jar File and test for MacOS
       run: |
-        bash run.sh -a
+        bash src/test.sh
