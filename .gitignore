@@ -7,5 +7,9 @@
 
 # Compiler
 target/
-extracted_files/*
-!extracted_files/README.md
+extracted_files/
+spigot_versions/
+out/
+
+# Extras
+.config

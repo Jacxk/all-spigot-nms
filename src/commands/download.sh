@@ -21,7 +21,7 @@ legacy_versions=(
   "spigot-1.16.5"
 )
 
-versions=(
+new_versions=(
   "spigot-1.17.1"
   "spigot-1.18.1"
   "spigot-1.18.2"
@@ -33,40 +33,55 @@ versions=(
   "spigot-1.20.4"
 )
 
-# Go back and create dir spigot_versions if not exists
-cd ../../
-mkdir spigot_versions/ -p
-cd spigot_versions/ || exit 1
+legacy_url="https://cdn.getbukkit.org/spigot"
+new_url="https://download.getbukkit.org/spigot"
 
-# Download all legacy versions from cdn.getbukkit.org on dir spigot_versions
-for version in "${legacy_versions[@]}"; do
-  echo -e "Downloading \e[34m$version\e[39m...\e[39m"
-  if curl --fail https://cdn.getbukkit.org/spigot/"$version".jar --output "$version".jar; then
-    echo -e "Downloaded \e[34m$version \e[39msuccessfully!"
+function _download_jars {
+  version=$1
+  url=$2
+  output=$3
+
+  saveCursorPosition
+  echo "  ⭕️ $version"
+
+  # Download the jar file to the output folder.
+  #   Also saves the cursor and replaces the printed string for less clutter
+  if curl --fail "$url/$version".jar --output "$output/$version".jar --progress-bar; then
+    moveCursorToSavedPosition
+    echo "  🟢 $version"
+    deleteLine
   else
     # If the download fails stop the execution
-    echo ""
-    echo -e "\e[91mSomething went wrong!\e[39m"
-    exit 1
+    return 1
   fi
-  echo ""
-done
+}
 
-# Download all versions from download.getbukkit.org on dir spigot_versions
-for version in "${versions[@]}"; do
-  echo -e "Downloading \e[34m$version\e[39m...\e[39m"
-  if curl --fail https://download.getbukkit.org/spigot/"$version".jar --output "$version".jar; then
-    echo -e "Downloaded \e[34m$version \e[39msuccessfully!"
-  else
-    # If the download fails stop the execution
-    echo ""
-    echo -e "\e[91mSomething went wrong!\e[39m"
-    exit 1
-  fi
-  echo ""
-done
+function download {
+  check_internet_connection
 
-echo -e "\e[32mSuccessfully downloaded all available versions!\e[39m"
+  output_folder=$1
+  echo Downloading all available jar files
 
-# Go back to the commands folder
-cd ../src/commands/ || exit 1
+  # Download all legacy versions from cdn.getbukkit.org on dir spigot_versions
+  for version in "${legacy_versions[@]}"; do
+    _download_jars $version $legacy_url $output_folder
+
+    RETURN_CODE=$?
+    if [ $RETURN_CODE -ne 0 ]; then
+      return $RETURN_CODE
+    fi
+  done
+
+  # Download all versions from download.getbukkit.org on dir spigot_versions
+  for version in "${new_versions[@]}"; do
+    _download_jars $version $new_url $output_folder
+
+    RETURN_CODE=$?
+    if [ $RETURN_CODE -ne 0 ]; then
+      return $RETURN_CODE
+    fi
+  done
+
+  delete_lines 24
+  echo Successfully downloaded all available versions! Files located at: $output_folder
+}
