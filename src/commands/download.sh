@@ -23,14 +23,6 @@ legacy_versions=(
 
 new_versions=(
   "spigot-1.17.1"
-  "spigot-1.18.1"
-  "spigot-1.18.2"
-  "spigot-1.19.2"
-  "spigot-1.19.3"
-  "spigot-1.19.4"
-  "spigot-1.20.1"
-  "spigot-1.20.2"
-  "spigot-1.20.4"
 )
 
 legacy_url="https://cdn.getbukkit.org/spigot"

@@ -1,5 +1,11 @@
 # All Spigot NMS
-This is a tool I created to create a single jar file that contains all of spigot NMS versions, for easy import while creating a plugin that needs to support multiple versions of the Minecraft server libraries.
+This is a tool I created to create a single jar file that contains all of spigot NMS 
+versions, for easy import while creating a plugin that needs to support multiple versions of the Minecraft server libraries.
+
+> ## Important
+> Since version `1.17.1` Spigot changed the layout and obfucation mapping method, so this tool only compiles from version *1.8* to *1.17*.
+> If you need support for version `1.18` and above please check out [tekanaka](https://github.com/zlataovce/takenaka).\
+> *I will try to find a way to include everything but nothing is promised.*
 
 ## Usage
 NOTE: This tool uses the `jar` command.

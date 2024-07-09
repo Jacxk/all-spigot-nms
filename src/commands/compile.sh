@@ -21,7 +21,7 @@ compile() {
     return 3
   fi
 
-  mkdir -p output_folder
+  mkdir -p $output_folder
   echo Creating $output_file
 
   # Remove file if it exists

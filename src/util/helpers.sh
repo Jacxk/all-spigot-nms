@@ -63,7 +63,7 @@ check_os() {
 }
 
 check_internet_connection() {
-  curl -sI http://google.com > /dev/null
+  curl -sI https://example.com/ > /dev/null
   if [[ $? -ne 0 ]]; then
     echo There\'s no internet connection to download the Jar files
     exit 1
