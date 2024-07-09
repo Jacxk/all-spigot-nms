@@ -32,7 +32,7 @@ function check_for_folder {
 
   # Check each version in the list
   for version in "${list[@]}"; do
-    if ! echo "$contents" | grep -q "$folder/$version"; then
+    if ! grep -q "$folder/$version" <<< "$contents"; then
       echo "'$folder/$version' is missing"
       missing_folders=1
     else
