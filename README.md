@@ -41,7 +41,12 @@ git clone https://github.com/Jacxk/all-spigot-nms
   * All the above `-a` - Does all the above sequentially.
   * Exit - Closes everything and exits of course.
 
-  *Use the arrows and enter key to navigate through the menu.*
+    *Use the arrows and enter key to navigate through the menu.*
+
+  ***Extra Flags:***
+  * `-t` - Tests that the tool works as expected and everything is included on the out jar file.
+  * `-k` - Removes title printout
+  * `-x` - Disables verbose out put. Only important info will be displayed.
   </details>
 
 #

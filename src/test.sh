@@ -3,7 +3,7 @@
 # Test if the file was created an contains all the NMS files
 
 echo Starting test...
-bash run.sh -ax
+bash run.sh -axk
 
 function join_by {
   local d=${1-} f=${2-}
@@ -21,9 +21,8 @@ list=(
     v1_20_R1 v1_20_R2 v1_20_R3
 )
 
+jar_file="out/all-spigot-nms.jar"
 if [ -f "$filename" ]; then
-
-  jar_file="out/all-spigot-nms.jar"
   contents=$(jar -tf "$jar_file")
   missing=0
 

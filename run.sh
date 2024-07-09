@@ -39,7 +39,9 @@ run_command() {
 }
 
 execute() {
-  print_title
+  if [ $display_title = 1 ]; then
+    print_title
+  fi
   check_os
   echo
 
@@ -85,6 +87,9 @@ execute() {
 
     echo Bye Bye...
     exit 0
+  elif [ $choice = 77 ]; then
+    # Run tests
+    source src/test.sh
   else
     # Run the correct command according to the choice
     run_command $choice 1
