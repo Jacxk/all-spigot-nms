@@ -9,11 +9,22 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
+
+      - name: Generate needed files
+        run: |
+          bash run.sh -axk
+
+      - name: Build with Maven
+        run: mvn clean package
+
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
