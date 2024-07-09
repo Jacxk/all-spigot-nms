@@ -5,7 +5,12 @@
 
     <groupId>com.github.Jacxk</groupId>
     <artifactId>all-spigot-nms</artifactId>
-    <version>LATEST</version>
+    <version>1.6.0</version>
+    <packaging>jar</packaging>
+
+    <name>All Spigot NMS</name>
+    <description>A jar file containing all Spigot's NMS versions</description>
+    <url>https://github.com/Jacxk/all-spigot-nms</url>
 
     <distributionManagement>
         <repository>

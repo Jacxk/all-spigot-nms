@@ -13,31 +13,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Build Jar File
+    - name: Checkout repository
+      uses: actions/checkout@v4
+        
+    - name: Build Jar File and test for Linux
       run: |
-        cd src
-        bash run.sh -a
+        bash run.sh -t
   windows:
     name: Windows Test
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Build Jar File
+    - name: Build Jar File and test for Windows
       run: |
-        cd src
-        bash run.sh -a
+        bash run.sh -t
   mac:
     name: Mac Test
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Build Jar File
+    - name: Build Jar File and test for MacOS
       run: |
-        cd src
-        bash run.sh -a
+        bash run.sh -t

@@ -2,8 +2,6 @@
 
 # Run this to ONLY extract the jars.
 
-# Folder where all the files will be extracted to
-holder="extracted_files"
 # Command to be used depending on OS
 cmd="$(printenv ASNMSCMD)"
 
@@ -12,23 +10,38 @@ if [ -z "$cmd" ]; then
   cmd=jar
 fi
 
-# Go back two directories to find holder and created it of it doesnt exist
-cd ../../
-mkdir "$holder" -p
+extract() {
+  local current_dir=$(pwd)
+  local input_folder=$1
+  local output_folder=$2
 
-cd "$holder"/ || exit 1
+  if [ ! "$(ls -A $input_folder)" ]; then
+    echo "The folder: $input_folder/ does not exist or is empty."
+    return 3
+  fi
 
-echo "Extracting all spigot.jar files, please wait..."
+  cd $output_folder
+  echo "Extracting all the spigot.jar files, please wait..."
 
-# Extract all files that match in holder
-for filename in ../spigot_versions/spigot-1.*.jar; do
-  echo "Currently extracting $filename..."
-  "$cmd" -xf "$filename" net/minecraft/server
-  "$cmd" -xf "$filename" org/bukkit/craftbukkit
-  "$cmd" -xf "$filename" com/mojang
-done
+  # Extract all files that match in holder
+  for filename in ../$input_folder/spigot-1.*.jar; do
+    saveCursorPosition
+    echo_verbose "  ⭕️ $(basename ${filename})"
 
-echo "Extraction completed!"
+    # Loop through the needed folder and extract them.
+    for dir in net/minecraft/server org/bukkit/craftbukkit com/mojang; do
+      "$cmd" -xf "$filename" "$dir"
 
-# Go back to the commands folder
-cd ../src/commands || exit 1
+      if [ $? -ne 0 ]; then
+        return 2
+      fi
+    done
+
+    moveCursorToSavedPosition
+    echo_verbose "  🟢 $(basename ${filename})"
+  done
+
+  delete_lines 24
+  echo "✅ Extraction completed! Files located at: $output_folder/"
+  cd $current_dir
+}

@@ -1,11 +1,16 @@
 # IDE
 .idea/
 *.iml
+.DS_STORE
 
 # Jar files
 *.jar
 
 # Compiler
 target/
-extracted_files/*
-!extracted_files/README.md
+extracted_files/
+spigot_versions/
+out/
+
+# Extras
+.config
