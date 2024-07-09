@@ -3,7 +3,7 @@
 # Test if the file was created an contains all the NMS files
 
 echo Starting test...
-bash run.sh -cxk
+bash run.sh -axk
 
 # List containing all files
 legacy_list=(
