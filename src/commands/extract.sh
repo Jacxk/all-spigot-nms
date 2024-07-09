@@ -15,6 +15,11 @@ extract() {
   local input_folder=$1
   local output_folder=$2
 
+  if [ ! "$(ls -A $input_folder)" ]; then
+    echo "The folder: $input_folder/ does not exist or is empty."
+    return 3
+  fi
+
   cd $output_folder
   echo "Extracting all the spigot.jar files, please wait..."
 
